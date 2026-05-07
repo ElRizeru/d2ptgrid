@@ -1,6 +1,7 @@
 import asyncio
 import os
 from playwright.async_api import async_playwright
+from playwright_stealth import stealth_async
 
 ROLE_MAPPING = {
     "0": "all_roles",
@@ -23,16 +24,17 @@ OUTPUT_DIR = "hero_grids"
 async def download_grid(page, role_id, role_name):
     print(f"[PROCESS] {role_name}")
     try:
-        await page.wait_for_selector("select#config-select", timeout=10000)
-        await page.select_option("select#config-select", role_id)
-        await asyncio.sleep(2)
+        selector = "select#config-select"
+        await page.wait_for_selector(selector, state="visible", timeout=180000)
+        await page.select_option(selector, role_id)
+        await asyncio.sleep(10)
         
         for display_name, folder_name in CATEGORY_MAPPING.items():
             try:
-                section = page.locator("div.flex.flex-col.gap-4", has_text=display_name).first
+                section = page.locator("div", has_text=display_name).filter(has=page.locator("button", has_text="Download")).first
                 download_button = section.locator("button", has_text="Download")
                 
-                async with page.expect_download() as download_info:
+                async with page.expect_download(timeout=180000) as download_info:
                     await download_button.click()
                 
                 download = await download_info.value
@@ -43,25 +45,31 @@ async def download_grid(page, role_id, role_name):
             except Exception as e:
                 print(f"  [ERROR] {role_name} {display_name}: {e}")
     except Exception as e:
-        print(f"  [FATAL] Failed to find selector: {e}")
+        print(f"  [FATAL] {role_name}: {e}")
+        print(f"  [DEBUG] Page Title: {await page.title()}")
 
 async def main():
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+        browser = await p.chromium.launch(
+            headless=True,
+            args=["--disable-blink-features=AutomationControlled"]
+        )
         context = await browser.new_context(
             viewport={'width': 1920, 'height': 1080},
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
         )
         page = await context.new_page()
+        await stealth_async(page)
         
         try:
-            await page.goto(BASE_URL, wait_until="domcontentloaded", timeout=60000)
-            await page.wait_for_load_state("networkidle")
+            print(f"[START] {BASE_URL}")
+            await page.goto(BASE_URL, wait_until="load", timeout=180000)
+            await asyncio.sleep(15)
             
             for role_id, role_name in ROLE_MAPPING.items():
                 await download_grid(page, role_id, role_name)
         except Exception as e:
-            print(f"[ERROR] Main loop failed: {e}")
+            print(f"[ERROR] {e}")
         finally:
             await browser.close()
 
