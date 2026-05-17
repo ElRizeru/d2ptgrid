@@ -113,8 +113,9 @@ $catChoice = $config.category
 $guidesChoice = $config.install_guides
 
 if ($catChoice -and $null -ne $guidesChoice) {
+    $currentCatName = $CATEGORIES[$catChoice][1]
     Write-Host "Loaded saved settings:"
-    Write-Host "Category: $($CATEGORIES[$catChoice][1])"
+    Write-Host "Category: $currentCatName"
     Write-Host "Install Guides: $(if($guidesChoice){'Yes'}else{'No'})"
     $useSaved = Read-Host "Use these settings? (y/n, default y)"
     if ($useSaved -eq "n") { $catChoice = $null; $guidesChoice = $null }
@@ -123,7 +124,7 @@ if ($catChoice -and $null -ne $guidesChoice) {
 if (-not $catChoice) {
     Write-Host "`nSelect Hero Grid Category:"
     Write-Host "1. Most Played"
-    Write-Host "2. High Winrate"
+    Write-Host "2. Most Picked Heroes (>50% Winrate)"
     Write-Host "3. D2PT Rating"
     $catChoice = Read-Host "Choice (default 2)"
     if (-not $catChoice) { $catChoice = "2" }

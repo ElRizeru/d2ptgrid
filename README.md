@@ -13,7 +13,7 @@ Automated hero grid parser for [Dota 2 Pro Tracker](https://dota2protracker.com/
 Layouts organized by roles and current meta.
 
 <p align="center">
-  <img src="assets/1.png" width="100%" alt="Main Hero Grid">
+  <img src="1.png" width="100%" alt="Main Hero Grid">
 </p>
 
 ---
@@ -60,7 +60,7 @@ If you have Python installed and prefer running from source:
 ---
 
 ## ✨ Features
-- **Pro Meta Grids:** Automatically pulls data from D2PT for "Most Played", "High Winrate", and "D2PT Rating".
+- **Pro Meta Grids:** Automatically pulls data from D2PT for "Most Played", "Most Picked Heroes (>50% Winrate)", and "D2PT Rating".
 - **Item Builds:** Optional integration with high-quality item guides.
 - **Auto-Discovery:** Automatically locates your Steam and Dota 2 installation folders.
 - **Smart Backups:** Creates `.bak` files of your existing configurations before making changes.
