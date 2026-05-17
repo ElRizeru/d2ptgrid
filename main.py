@@ -21,7 +21,7 @@ CONFIG_FILE = "config.json"
 
 CATEGORIES = {
     "1": ("most_played", "Most Played"),
-    "2": ("high_winrate", "High Winrate"),
+    "2": ("high_winrate", "Most Picked Heroes (>50% Winrate)"),
     "3": ("d2pt_rating", "D2PT Rating")
 }
 

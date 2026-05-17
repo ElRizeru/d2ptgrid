@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 
 CATEGORIES: List[Tuple[str, str]] = [
     ("Most Played", "most_played"),
-    ("High Winrate", "high_winrate"),
+    ("Most Picked Heroes (>50% Winrate)", "high_winrate"),
     ("D2PT Rating", "d2pt_rating")
 ]
 
