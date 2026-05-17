@@ -13,7 +13,7 @@ Automated hero grid parser for [Dota 2 Pro Tracker](https://dota2protracker.com/
 Layouts organized by roles and current meta.
 
 <p align="center">
-  <img src="1.png" width="100%" alt="Main Hero Grid">
+  <img src="assets/1.png" width="100%" alt="Main Hero Grid">
 </p>
 
 ---
