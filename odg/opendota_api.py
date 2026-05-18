@@ -269,6 +269,7 @@ def get_hero_ability_guide(hero_id: str, ability_ids_map: dict | None = None, he
     if hero_id in heroes_map:
         hero_name = heroes_map[hero_id]["name"]
         
+    valid_abilities = set()
     if hero_name and hero_name in hero_abilities_map:
         ha = hero_abilities_map[hero_name]
         if "abilities" in ha:
@@ -283,7 +284,7 @@ def get_hero_ability_guide(hero_id: str, ability_ids_map: dict | None = None, he
         if ability_name:
             if ability_name == "special_bonus_attributes":
                 ability_guide.append("") # Keep the index empty for stats
-            elif ability_name in valid_abilities:
+            elif not valid_abilities or ability_name in valid_abilities:
                 ability_guide.append(ability_name)
             else:
                 ability_guide.append("") # Skip invalid abilities to maintain level alignment
@@ -320,7 +321,15 @@ def get_hero_popularity_guide(hero_id: str, items_map: dict):
                 logger.debug("Skipping unknown item id %s for hero %s.", inner_keys, hero_id)
         stages[key] = stage
 
-    _write_hero_data(hero_id, stages)
+    hero_path = _hero_data_path(hero_id)
+    if os.path.exists(hero_path):
+        with open(hero_path) as json_file:
+            hero_data = json.load(json_file)
+    else:
+        hero_data = {}
+
+    hero_data.update(stages)
+    _write_hero_data(hero_id, hero_data)
 
 def get_heroes_map() -> dict:
     heroes = _get_json("/heroes")
@@ -338,7 +347,10 @@ def get_items_map() -> dict:
     items_map = {}
     for item_key, item_attrs in items.items():
         if "id" in item_attrs:
-            cost = item_attrs.get("cost", 0)
+            cost = item_attrs.get("cost")
+            if cost is None:
+                cost = 0
+            
             flag = utils.ITEM_FLAGS_OVERRIDES.get(item_key, "")
             # Apply heuristics ONLY if there is no explicit override
             if flag == "":
