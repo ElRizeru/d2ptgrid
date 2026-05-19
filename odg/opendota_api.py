@@ -152,11 +152,16 @@ SELECT
   COUNT(*) as pick_count
 FROM (
   SELECT
-    jsonb_array_elements(to_jsonb(player_matches.neutral_item_history))->>'item_neutral' AS neutral_item
-  FROM player_matches
-  JOIN matches USING(match_id)
-  WHERE player_matches.hero_id = {hero_id}
-    AND matches.start_time > extract(epoch from now() - interval '30 days')
+    jsonb_array_elements(to_jsonb(pm.neutral_item_history))->>'item_neutral' AS neutral_item
+  FROM (
+    SELECT match_id, neutral_item_history
+    FROM player_matches
+    WHERE hero_id = {hero_id}
+    ORDER BY match_id DESC
+    LIMIT 2000
+  ) pm
+  JOIN matches m ON pm.match_id = m.match_id
+  WHERE m.start_time > extract(epoch from now() - interval '30 days')
 ) hero_neutral_items
 WHERE neutral_item IS NOT NULL
 GROUP BY neutral_item
@@ -165,7 +170,11 @@ ORDER BY pick_count DESC;
 
 
 def _get_explorer_rows(sql: str):
-    response_json = _get_json("/explorer", params={"sql": sql}, timeout=request_timeout)
+    response = requests.get(f"{opendota_api_url}/explorer", params={"sql": sql}, timeout=request_timeout)
+    if response.status_code == 400:
+        logger.error(f"Explorer query returned 400: {response.text}")
+    response.raise_for_status()
+    response_json = response.json()
     if response_json.get("err"):
         raise ValueError(response_json["err"])
     return response_json.get("rows", [])
@@ -230,11 +239,19 @@ def _ability_query(hero_id: str) -> str:
     hero_id = int(hero_id)
     return f"""
 SELECT ability_upgrades_arr, COUNT(*) as count
-FROM player_matches
-JOIN matches USING(match_id)
-WHERE hero_id = {hero_id}
-AND start_time > extract(epoch from now() - interval '30 days')
-AND array_length(ability_upgrades_arr, 1) >= 15
+FROM (
+  SELECT pm.ability_upgrades_arr
+  FROM (
+    SELECT match_id, ability_upgrades_arr
+    FROM player_matches
+    WHERE hero_id = {hero_id}
+    ORDER BY match_id DESC
+    LIMIT 2000
+  ) pm
+  JOIN matches m ON pm.match_id = m.match_id
+  WHERE m.start_time > extract(epoch from now() - interval '30 days')
+) recent_matches
+WHERE array_length(ability_upgrades_arr, 1) >= 15
 GROUP BY ability_upgrades_arr
 ORDER BY count DESC
 LIMIT 1;
