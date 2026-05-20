@@ -83,25 +83,22 @@ async def async_build_odg_guides():
         "fetching hero abilities constants", lambda: opendota_api._get_json("/constants/hero_abilities")
     )
     
-    # 1. Fetch item popularity guides for all heroes concurrently using ThreadPoolExecutor
-    logger.info(f"Concurrently fetching item popularity for {len(heroes_map)} heroes...")
-    
-    def fetch_pop(hid):
-        call_opendota_with_wait(
-            f"fetching shop item popularity for {heroes_map[hid]['localized_name']}",
-            lambda: opendota_api.get_hero_popularity_guide(hid, items_map),
-        )
-        
-    executor = concurrent.futures.ThreadPoolExecutor(max_workers=5)
+    # 1. Fetch item popularity guides for all heroes sequentially to respect OpenDota API rate limits
+    logger.info(f"Fetching item popularity for {len(heroes_map)} heroes sequentially...")
     loop = asyncio.get_running_loop()
-    
-    tasks = []
-    for hero_id in heroes_map.keys():
-        task = loop.run_in_executor(executor, fetch_pop, hero_id)
-        tasks.append(task)
+    for idx, hero_id in enumerate(heroes_map.keys(), start=1):
+        if idx > 1:
+            await asyncio.sleep(1.1)
         
-    await asyncio.gather(*tasks)
-    logger.info("Finished concurrently fetching item popularity guides.")
+        def fetch_pop(hid=hero_id):
+            call_opendota_with_wait(
+                f"fetching shop item popularity for {heroes_map[hid]['localized_name']}",
+                lambda: opendota_api.get_hero_popularity_guide(hid, items_map),
+            )
+            
+        await loop.run_in_executor(None, fetch_pop)
+        
+    logger.info("Finished fetching item popularity guides.")
     
     # 2. Get the min_match_id estimation
     min_match_id = call_opendota_with_wait("fetching max match_id boundary", opendota_api.get_min_match_id)
@@ -115,6 +112,8 @@ async def async_build_odg_guides():
     # 3. Fetch neutral item popularity in batches
     logger.info(f"Fetching neutral item guides in {len(batches)} batches...")
     for idx, batch in enumerate(batches, start=1):
+        if idx > 1:
+            await asyncio.sleep(1.1)
         logger.info(f"Neutral items batch {idx}/{len(batches)}")
         batch_neutrals = call_opendota_with_wait(
             f"fetching neutral items batch {idx}",
@@ -122,11 +121,12 @@ async def async_build_odg_guides():
         )
         for hid, neutral_guide in batch_neutrals.items():
             opendota_api.save_hero_neutral_guide(hid, neutral_guide)
-        await asyncio.sleep(0.5)
 
     # 4. Fetch ability upgrade guides in batches
     logger.info(f"Fetching ability upgrade guides in {len(batches)} batches...")
     for idx, batch in enumerate(batches, start=1):
+        if idx > 1:
+            await asyncio.sleep(1.1)
         logger.info(f"Ability upgrades batch {idx}/{len(batches)}")
         batch_abilities = call_opendota_with_wait(
             f"fetching ability upgrades batch {idx}",
@@ -134,7 +134,6 @@ async def async_build_odg_guides():
         )
         for hid, ability_guide in batch_abilities.items():
             opendota_api.save_hero_ability_guide(hid, ability_guide)
-        await asyncio.sleep(0.5)
 
     # 5. Compile files
     for i, (hero_id, hero_data) in enumerate(heroes_map.items(), start=1):
@@ -247,8 +246,11 @@ async def main():
 
 
 async def run_all():
-    await main()
-    await async_build_odg_guides()
+    # Run the Playwright scraper and OpenDota guides builder concurrently
+    await asyncio.gather(
+        main(),
+        async_build_odg_guides()
+    )
 
 
 if __name__ == "__main__":
