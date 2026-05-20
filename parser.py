@@ -20,7 +20,8 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-retryable_status_codes = (429, 504)
+def is_retryable(status_code) -> bool:
+    return status_code == 429 or (status_code is not None and 500 <= status_code < 600)
 
 def call_opendota_with_wait(description: str, callback):
     while True:
@@ -28,7 +29,7 @@ def call_opendota_with_wait(description: str, callback):
             return callback()
         except requests.exceptions.HTTPError as error:
             status_code = error.response.status_code if error.response is not None else None
-            if status_code in retryable_status_codes:
+            if is_retryable(status_code):
                 logger.info(f"Waiting for OpenDota while {description}; got status {status_code}..")
                 time.sleep(15)
                 continue
