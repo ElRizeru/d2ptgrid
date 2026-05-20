@@ -377,3 +377,163 @@ def get_items_map() -> dict:
                 "flag": flag
             }
     return items_map
+
+
+def get_min_match_id(max_id_offset=40000000) -> int:
+    """Gets the current max match_id and estimates the 30-day minimum match_id using offset."""
+    rows = _get_explorer_rows("SELECT MAX(match_id) as max_id FROM matches")
+    if not rows or not rows[0].get("max_id"):
+        # Fallback value if query fails or returns empty
+        return 8770000000
+    return int(rows[0]["max_id"]) - max_id_offset
+
+
+def fetch_neutral_items_batch(hero_ids: list, min_match_id: int, neutral_item_tiers: dict) -> dict:
+    """Fetches neutral item popularity for a batch of heroes and parses them into guides."""
+    neutral_queries = []
+    for hid in hero_ids:
+        q = f"""
+      SELECT
+        {hid} as hero_id,
+        neutral_item,
+        COUNT(*) as pick_count
+      FROM (
+        SELECT
+          jsonb_array_elements(to_jsonb(pm.neutral_item_history))->>'item_neutral' AS neutral_item
+        FROM player_matches pm
+        WHERE hero_id = {hid} AND match_id > {min_match_id}
+        ORDER BY match_id DESC
+        LIMIT 2000
+      ) hero_neutral_items
+      WHERE neutral_item IS NOT NULL
+      GROUP BY neutral_item
+    """
+        neutral_queries.append(q)
+
+    union_sql = "\nUNION ALL\n".join(neutral_queries)
+    rows = _get_explorer_rows(union_sql)
+
+    hero_rows = {str(hid): [] for hid in hero_ids}
+    for row in rows:
+        hid = str(row.get("hero_id"))
+        if hid in hero_rows:
+            hero_rows[hid].append(row)
+
+    batch_guides = {}
+    for hid, rows_list in hero_rows.items():
+        neutral_items = {f"tier_{tier}": [] for tier in range(1, 6)}
+        seen_items = {f"tier_{tier}": set() for tier in range(1, 6)}
+
+        for row in rows_list:
+            item_name = _normalise_item_name(row.get("neutral_item"))
+            if not item_name:
+                continue
+
+            tier = neutral_item_tiers.get(item_name) or neutral_item_tiers.get(str(row.get("neutral_item")))
+            if tier is None:
+                continue
+
+            tier_key = f"tier_{tier}"
+            if len(neutral_items[tier_key]) >= 3:
+                continue
+
+            guide_name = _item_guide_name(item_name, None)
+            if guide_name in seen_items[tier_key]:
+                continue
+
+            neutral_items[tier_key].append(guide_name)
+            seen_items[tier_key].add(guide_name)
+
+        batch_guides[hid] = neutral_items
+
+    return batch_guides
+
+
+def fetch_ability_upgrades_batch(hero_ids: list, min_match_id: int, ability_ids_map: dict, hero_abilities_map: dict, heroes_map: dict) -> dict:
+    """Fetches ability upgrades for a batch of heroes and parses them into upgrade sequences."""
+    ability_queries = []
+    for hid in hero_ids:
+        q = f"""
+      (SELECT 
+        {hid} as hero_id,
+        ability_upgrades_arr, 
+        COUNT(*) as count
+      FROM (
+        SELECT ability_upgrades_arr
+        FROM player_matches
+        WHERE hero_id = {hid} AND match_id > {min_match_id}
+        ORDER BY match_id DESC
+        LIMIT 2000
+      ) pm
+      WHERE array_length(ability_upgrades_arr, 1) >= 15
+      GROUP BY ability_upgrades_arr
+      ORDER BY count DESC
+      LIMIT 1)
+    """
+        ability_queries.append(q)
+
+    union_sql = "\nUNION ALL\n".join(ability_queries)
+    rows = _get_explorer_rows(union_sql)
+
+    batch_guides = {str(hid): [] for hid in hero_ids}
+
+    for row in rows:
+        hid = str(row.get("hero_id"))
+        ability_ids_arr = row.get("ability_upgrades_arr", [])
+        
+        hero_name = None
+        if hid in heroes_map:
+            hero_name = heroes_map[hid]["name"]
+            
+        valid_abilities = set()
+        if hero_name and hero_name in hero_abilities_map:
+            ha = hero_abilities_map[hero_name]
+            if "abilities" in ha:
+                for ability in ha["abilities"]:
+                    if isinstance(ability, list):
+                        valid_abilities.update(ability)
+                    else:
+                        valid_abilities.add(ability)
+            if "talents" in ha:
+                for t in ha["talents"]:
+                    valid_abilities.add(t["name"])
+        
+        ability_guide = []
+        for ability_id in ability_ids_arr:
+            ability_name = ability_ids_map.get(str(ability_id))
+            if ability_name:
+                if ability_name == "special_bonus_attributes":
+                    ability_guide.append("")
+                elif not valid_abilities or ability_name in valid_abilities:
+                    ability_guide.append(ability_name)
+                else:
+                    ability_guide.append("")
+        
+        batch_guides[hid] = ability_guide
+
+    return batch_guides
+
+
+def save_hero_neutral_guide(hero_id: str, neutral_guide: dict):
+    """Saves neutral item guide for a hero."""
+    hero_path = _hero_data_path(hero_id)
+    if os.path.exists(hero_path):
+        with open(hero_path) as json_file:
+            hero_data = json.load(json_file)
+    else:
+        hero_data = {}
+    hero_data[utils.neutral_items_key] = neutral_guide
+    _write_hero_data(hero_id, hero_data)
+
+
+def save_hero_ability_guide(hero_id: str, ability_guide: list):
+    """Saves ability upgrade guide for a hero."""
+    hero_path = _hero_data_path(hero_id)
+    if os.path.exists(hero_path):
+        with open(hero_path) as json_file:
+            hero_data = json.load(json_file)
+    else:
+        hero_data = {}
+    hero_data[utils.ability_upgrades_key] = ability_guide
+    _write_hero_data(hero_id, hero_data)
+
