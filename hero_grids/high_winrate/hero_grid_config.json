@@ -9,10 +9,10 @@
             6,
             41,
             12,
+            11,
             8,
-            93,
             54,
-            1
+            93
           ],
           "x_position": 0,
           "y_position": 0,
@@ -26,9 +26,9 @@
             128,
             25,
             13,
-            22,
             90,
-            34
+            34,
+            76
           ],
           "x_position": 0,
           "y_position": 95,
@@ -43,8 +43,8 @@
             60,
             104,
             36,
-            128,
-            96
+            97,
+            128
           ],
           "x_position": 0,
           "y_position": 190,
@@ -54,13 +54,13 @@
           "width": 455,
           "height": 75,
           "hero_ids": [
-            86,
             14,
-            22,
             71,
-            26,
+            22,
+            123,
             128,
-            105
+            105,
+            62
           ],
           "x_position": 0,
           "y_position": 285,
@@ -72,11 +72,11 @@
           "hero_ids": [
             14,
             87,
-            75,
             86,
+            75,
             5,
             51,
-            128
+            22
           ],
           "x_position": 0,
           "y_position": 380,
@@ -230,10 +230,10 @@
             6,
             41,
             12,
+            11,
             8,
-            93,
             54,
-            1
+            93
           ],
           "x_position": 0,
           "y_position": 0,
@@ -244,12 +244,12 @@
           "height": 55,
           "hero_ids": [
             22,
-            74,
             60,
+            74,
             51,
-            14,
             104,
-            71
+            14,
+            2
           ],
           "x_position": 75,
           "y_position": 20,
@@ -278,10 +278,10 @@
             145,
             39,
             26,
-            129,
             28,
+            93,
             69,
-            93
+            129
           ],
           "x_position": 655,
           "y_position": 20,
@@ -291,13 +291,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            107,
             62,
+            107,
             14,
-            55,
             90,
             67,
-            12
+            12,
+            83
           ],
           "x_position": 945,
           "y_position": 20,
@@ -310,10 +310,10 @@
             74,
             60,
             104,
-            2,
-            135,
+            25,
             105,
-            25
+            2,
+            135
           ],
           "x_position": 75,
           "y_position": 95,
@@ -324,11 +324,11 @@
           "height": 55,
           "hero_ids": [
             16,
-            25,
-            136,
-            59,
             19,
+            64,
             99,
+            120,
+            73,
             53
           ],
           "x_position": 365,
@@ -339,13 +339,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            129,
             39,
+            129,
             145,
-            19,
             105,
+            19,
             48,
-            25
+            17
           ],
           "x_position": 655,
           "y_position": 95,
@@ -355,8 +355,8 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            80,
             62,
+            80,
             60,
             59,
             121,
@@ -387,12 +387,12 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            38,
             15,
+            38,
             53,
-            91,
             5,
-            19,
+            61,
+            91,
             30
           ],
           "x_position": 365,
@@ -404,12 +404,12 @@
           "height": 55,
           "hero_ids": [
             27,
-            120,
             129,
             39,
             28,
             19,
-            14
+            14,
+            145
           ],
           "x_position": 655,
           "y_position": 170,
@@ -419,13 +419,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            97,
-            62,
-            55,
             18,
+            55,
+            62,
+            2,
             14,
             7,
-            2
+            86
           ],
           "x_position": 945,
           "y_position": 170,
@@ -436,12 +436,12 @@
           "height": 55,
           "hero_ids": [
             60,
-            104,
+            71,
+            106,
             27,
-            86,
-            29,
-            35,
-            97
+            22,
+            97,
+            128
           ],
           "x_position": 75,
           "y_position": 245,
@@ -451,16 +451,80 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            114,
             99,
-            40,
-            30,
-            101,
-            47,
-            145
+            64,
+            35,
+            112,
+            37,
+            98,
+            85
           ],
           "x_position": 365,
           "y_position": 245,
+          "category_name": "Worst with"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            145,
+            39,
+            19,
+            17,
+            28,
+            5,
+            69
+          ],
+          "x_position": 655,
+          "y_position": 245,
+          "category_name": "Best against"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            90,
+            74,
+            51,
+            67,
+            6,
+            62,
+            88
+          ],
+          "x_position": 945,
+          "y_position": 245,
+          "category_name": "Worst against"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            104,
+            27,
+            60,
+            29,
+            86,
+            106,
+            22
+          ],
+          "x_position": 75,
+          "y_position": 320,
+          "category_name": "Best with"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            99,
+            114,
+            30,
+            40,
+            47,
+            101,
+            145
+          ],
+          "x_position": 365,
+          "y_position": 320,
           "category_name": "Worst with"
         },
         {
@@ -471,12 +535,12 @@
             5,
             145,
             19,
+            114,
             120,
-            28,
-            39
+            28
           ],
           "x_position": 655,
-          "y_position": 245,
+          "y_position": 320,
           "category_name": "Best against"
         },
         {
@@ -485,75 +549,11 @@
           "hero_ids": [
             71,
             60,
-            2,
             104,
-            51,
-            41,
-            12
-          ],
-          "x_position": 945,
-          "y_position": 245,
-          "category_name": "Worst against"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            74,
-            128,
-            75,
-            60,
-            135,
             2,
-            31
-          ],
-          "x_position": 75,
-          "y_position": 320,
-          "category_name": "Best with"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            40,
-            98,
-            19,
-            64,
-            39,
-            129,
-            38
-          ],
-          "x_position": 365,
-          "y_position": 320,
-          "category_name": "Worst with"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            145,
-            29,
-            17,
-            35,
-            39,
-            48,
-            120
-          ],
-          "x_position": 655,
-          "y_position": 320,
-          "category_name": "Best against"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            74,
-            105,
-            4,
-            22,
-            121,
-            51,
-            6
+            41,
+            12,
+            51
           ],
           "x_position": 945,
           "y_position": 320,
@@ -564,12 +564,12 @@
           "height": 55,
           "hero_ids": [
             60,
-            74,
             128,
+            74,
             86,
             2,
-            104,
-            97
+            97,
+            104
           ],
           "x_position": 75,
           "y_position": 395,
@@ -583,8 +583,8 @@
             99,
             40,
             38,
-            110,
             129,
+            110,
             126
           ],
           "x_position": 365,
@@ -599,9 +599,9 @@
             108,
             129,
             39,
+            48,
             145,
-            105,
-            48
+            105
           ],
           "x_position": 655,
           "y_position": 395,
@@ -615,9 +615,9 @@
             28,
             56,
             83,
-            71,
-            36,
-            51
+            51,
+            8,
+            10
           ],
           "x_position": 945,
           "y_position": 395,
@@ -627,13 +627,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            62,
-            90,
             74,
-            51,
+            128,
+            75,
+            135,
+            2,
             60,
-            112,
-            128
+            104
           ],
           "x_position": 75,
           "y_position": 470,
@@ -643,13 +643,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
+            40,
+            98,
             129,
-            99,
-            126,
-            108,
-            128,
-            120,
-            39
+            64,
+            39,
+            38,
+            11
           ],
           "x_position": 365,
           "y_position": 470,
@@ -659,13 +659,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            99,
-            73,
-            138,
-            36,
-            10,
-            105,
-            17
+            29,
+            145,
+            17,
+            120,
+            48,
+            39,
+            106
           ],
           "x_position": 655,
           "y_position": 470,
@@ -675,13 +675,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            2,
             74,
-            59,
-            60,
-            128,
-            123,
-            75
+            105,
+            4,
+            22,
+            121,
+            6,
+            60
           ],
           "x_position": 945,
           "y_position": 470,
@@ -700,9 +700,9 @@
             128,
             25,
             13,
-            22,
             90,
-            34
+            34,
+            76
           ],
           "x_position": 0,
           "y_position": 0,
@@ -713,12 +713,12 @@
           "height": 55,
           "hero_ids": [
             12,
-            71,
-            22,
             41,
+            22,
             2,
-            104,
-            60
+            71,
+            60,
+            27
           ],
           "x_position": 75,
           "y_position": 20,
@@ -730,11 +730,11 @@
           "hero_ids": [
             15,
             114,
-            38,
-            14,
+            65,
             35,
-            64,
-            103
+            38,
+            41,
+            57
           ],
           "x_position": 365,
           "y_position": 20,
@@ -744,13 +744,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            25,
-            39,
-            93,
             129,
+            93,
+            39,
+            25,
             26,
             14,
-            29
+            48
           ],
           "x_position": 655,
           "y_position": 20,
@@ -760,13 +760,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            58,
             112,
+            58,
             92,
             33,
             107,
             91,
-            62
+            77
           ],
           "x_position": 945,
           "y_position": 20,
@@ -781,8 +781,8 @@
             54,
             2,
             135,
-            123,
-            104
+            104,
+            123
           ],
           "x_position": 75,
           "y_position": 95,
@@ -793,12 +793,12 @@
           "height": 55,
           "hero_ids": [
             72,
-            136,
             39,
             99,
+            136,
+            25,
             45,
-            16,
-            84
+            47
           ],
           "x_position": 365,
           "y_position": 95,
@@ -811,9 +811,9 @@
             35,
             129,
             145,
+            19,
             14,
             69,
-            19,
             26
           ],
           "x_position": 655,
@@ -826,11 +826,11 @@
           "hero_ids": [
             78,
             85,
+            33,
             50,
             90,
-            3,
-            59,
-            22
+            42,
+            3
           ],
           "x_position": 945,
           "y_position": 95,
@@ -841,12 +841,12 @@
           "height": 55,
           "hero_ids": [
             62,
-            88,
             41,
+            14,
             71,
-            54,
             60,
-            12
+            6,
+            54
           ],
           "x_position": 75,
           "y_position": 170,
@@ -857,12 +857,12 @@
           "height": 55,
           "hero_ids": [
             99,
-            138,
             26,
+            138,
             129,
             19,
-            100,
-            48
+            145,
+            70
           ],
           "x_position": 365,
           "y_position": 170,
@@ -872,13 +872,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            138,
-            36,
             39,
+            36,
             5,
+            128,
             22,
-            30,
-            101
+            101,
+            110
           ],
           "x_position": 655,
           "y_position": 170,
@@ -890,10 +890,10 @@
           "hero_ids": [
             90,
             74,
+            112,
             41,
+            67,
             60,
-            104,
-            12,
             2
           ],
           "x_position": 945,
@@ -906,11 +906,11 @@
           "hero_ids": [
             2,
             31,
-            22,
-            6,
             123,
+            60,
             12,
-            60
+            22,
+            71
           ],
           "x_position": 75,
           "y_position": 245,
@@ -920,13 +920,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            98,
             64,
-            105,
-            138,
+            98,
+            114,
             40,
             129,
-            114
+            84,
+            97
           ],
           "x_position": 365,
           "y_position": 245,
@@ -941,99 +941,35 @@
             120,
             145,
             17,
-            108,
-            14
-          ],
-          "x_position": 655,
-          "y_position": 245,
-          "category_name": "Best against"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            60,
-            22,
-            2,
-            59,
-            75,
-            14,
-            104
-          ],
-          "x_position": 945,
-          "y_position": 245,
-          "category_name": "Worst against"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            3,
-            27,
-            71,
-            67,
-            121,
-            14,
-            62
-          ],
-          "x_position": 75,
-          "y_position": 320,
-          "category_name": "Best with"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            120,
-            114,
-            19,
-            129,
-            145,
-            108,
+            123,
             48
           ],
-          "x_position": 365,
-          "y_position": 320,
-          "category_name": "Worst with"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            38,
-            64,
-            10,
-            75,
-            98,
-            114,
-            138
-          ],
           "x_position": 655,
-          "y_position": 320,
+          "y_position": 245,
           "category_name": "Best against"
         },
         {
           "width": 280,
           "height": 55,
           "hero_ids": [
-            54,
             60,
-            12,
-            28,
-            41,
-            135,
-            74
+            2,
+            75,
+            22,
+            104,
+            71,
+            6
           ],
           "x_position": 945,
-          "y_position": 320,
+          "y_position": 245,
           "category_name": "Worst against"
         },
         {
           "width": 280,
           "height": 55,
           "hero_ids": [
-            12,
             105,
+            12,
             2,
             54,
             60,
@@ -1041,7 +977,7 @@
             41
           ],
           "x_position": 75,
-          "y_position": 395,
+          "y_position": 320,
           "category_name": "Best with"
         },
         {
@@ -1049,31 +985,31 @@
           "height": 55,
           "hero_ids": [
             136,
-            16,
             35,
-            64,
+            16,
+            40,
             68,
-            53,
-            40
+            64,
+            30
           ],
           "x_position": 365,
-          "y_position": 395,
+          "y_position": 320,
           "category_name": "Worst with"
         },
         {
           "width": 280,
           "height": 55,
           "hero_ids": [
-            69,
             145,
+            69,
             48,
             86,
-            22,
             123,
+            22,
             25
           ],
           "x_position": 655,
-          "y_position": 395,
+          "y_position": 320,
           "category_name": "Best against"
         },
         {
@@ -1081,15 +1017,15 @@
           "height": 55,
           "hero_ids": [
             47,
-            62,
-            3,
-            111,
             113,
-            33,
-            78
+            78,
+            3,
+            155,
+            92,
+            20
           ],
           "x_position": 945,
-          "y_position": 395,
+          "y_position": 320,
           "category_name": "Worst against"
         },
         {
@@ -1101,8 +1037,72 @@
             60,
             27,
             12,
+            75,
+            11
+          ],
+          "x_position": 75,
+          "y_position": 395,
+          "category_name": "Best with"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            40,
+            98,
+            73,
+            9,
+            138,
+            64,
+            100
+          ],
+          "x_position": 365,
+          "y_position": 395,
+          "category_name": "Worst with"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            5,
+            39,
+            145,
+            129,
+            120,
+            126,
+            13
+          ],
+          "x_position": 655,
+          "y_position": 395,
+          "category_name": "Best against"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            54,
+            62,
             14,
-            75
+            35,
+            131,
+            104,
+            74
+          ],
+          "x_position": 945,
+          "y_position": 395,
+          "category_name": "Worst against"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            51,
+            41,
+            62,
+            60,
+            88,
+            67,
+            12
           ],
           "x_position": 75,
           "y_position": 470,
@@ -1112,13 +1112,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            98,
-            73,
-            138,
-            64,
-            40,
             114,
-            100
+            101,
+            1,
+            145,
+            98,
+            21,
+            30
           ],
           "x_position": 365,
           "y_position": 470,
@@ -1128,13 +1128,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            5,
-            39,
-            129,
-            145,
-            120,
+            98,
             126,
-            105
+            19,
+            10,
+            22,
+            145,
+            48
           ],
           "x_position": 655,
           "y_position": 470,
@@ -1144,11 +1144,11 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            62,
-            54,
-            14,
-            35,
-            44,
+            27,
+            6,
+            86,
+            60,
+            74,
             128,
             104
           ],
@@ -1170,8 +1170,8 @@
             60,
             104,
             36,
-            128,
-            96
+            97,
+            128
           ],
           "x_position": 0,
           "y_position": 0,
@@ -1200,10 +1200,10 @@
             39,
             53,
             63,
-            72,
-            95,
+            19,
             64,
-            19
+            72,
+            95
           ],
           "x_position": 365,
           "y_position": 20,
@@ -1216,8 +1216,8 @@
             126,
             70,
             129,
+            123,
             26,
-            17,
             39,
             108
           ],
@@ -1231,11 +1231,11 @@
           "hero_ids": [
             90,
             62,
-            102,
             67,
-            36,
             50,
-            80
+            36,
+            80,
+            22
           ],
           "x_position": 945,
           "y_position": 20,
@@ -1247,11 +1247,11 @@
           "hero_ids": [
             128,
             74,
-            41,
             12,
             93,
-            6,
-            71
+            41,
+            71,
+            6
           ],
           "x_position": 75,
           "y_position": 95,
@@ -1262,12 +1262,12 @@
           "height": 55,
           "hero_ids": [
             53,
-            19,
             64,
-            79,
+            23,
+            19,
             40,
             30,
-            23
+            79
           ],
           "x_position": 365,
           "y_position": 95,
@@ -1278,12 +1278,12 @@
           "height": 55,
           "hero_ids": [
             14,
-            126,
-            129,
             17,
-            26,
+            129,
             145,
-            104
+            26,
+            104,
+            39
           ],
           "x_position": 655,
           "y_position": 95,
@@ -1295,11 +1295,11 @@
           "hero_ids": [
             90,
             131,
-            41,
             88,
-            74,
-            83,
-            112
+            41,
+            20,
+            112,
+            12
           ],
           "x_position": 945,
           "y_position": 95,
@@ -1310,12 +1310,12 @@
           "height": 55,
           "hero_ids": [
             128,
-            35,
-            86,
             54,
-            74,
             31,
-            12
+            74,
+            12,
+            86,
+            35
           ],
           "x_position": 75,
           "y_position": 170,
@@ -1325,13 +1325,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            73,
             72,
-            136,
             94,
+            46,
             110,
-            91,
-            83
+            23,
+            5,
+            53
           ],
           "x_position": 365,
           "y_position": 170,
@@ -1341,13 +1341,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            39,
             120,
-            145,
+            39,
             129,
+            145,
+            26,
             108,
-            69,
-            26
+            69
           ],
           "x_position": 655,
           "y_position": 170,
@@ -1357,13 +1357,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            62,
-            3,
-            85,
-            42,
             33,
+            3,
+            62,
             61,
-            110
+            42,
+            85,
+            95
           ],
           "x_position": 945,
           "y_position": 170,
@@ -1374,12 +1374,12 @@
           "height": 55,
           "hero_ids": [
             74,
-            54,
-            31,
             128,
-            41,
+            8,
+            6,
             22,
-            6
+            54,
+            41
           ],
           "x_position": 75,
           "y_position": 245,
@@ -1391,11 +1391,11 @@
           "hero_ids": [
             97,
             145,
-            63,
             53,
-            47,
+            63,
             19,
-            84
+            47,
+            64
           ],
           "x_position": 365,
           "y_position": 245,
@@ -1409,9 +1409,9 @@
             145,
             108,
             5,
-            86,
             120,
-            69
+            69,
+            86
           ],
           "x_position": 655,
           "y_position": 245,
@@ -1421,13 +1421,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            6,
             135,
-            100,
+            6,
             128,
             83,
             105,
-            90
+            131,
+            85
           ],
           "x_position": 945,
           "y_position": 245,
@@ -1438,12 +1438,12 @@
           "height": 55,
           "hero_ids": [
             6,
-            13,
             41,
-            74,
             71,
-            12,
-            70
+            74,
+            8,
+            70,
+            26
           ],
           "x_position": 75,
           "y_position": 320,
@@ -1455,11 +1455,11 @@
           "hero_ids": [
             110,
             21,
-            73,
-            64,
             101,
+            73,
+            11,
             145,
-            40
+            85
           ],
           "x_position": 365,
           "y_position": 320,
@@ -1472,10 +1472,10 @@
             145,
             22,
             129,
-            27,
+            120,
             39,
-            17,
-            87
+            87,
+            27
           ],
           "x_position": 655,
           "y_position": 320,
@@ -1490,8 +1490,8 @@
             90,
             6,
             60,
-            12,
-            22
+            22,
+            11
           ],
           "x_position": 945,
           "y_position": 320,
@@ -1501,13 +1501,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            93,
-            51,
-            126,
+            106,
             54,
-            145,
-            74,
-            41
+            22,
+            11,
+            8,
+            109,
+            110
           ],
           "x_position": 75,
           "y_position": 395,
@@ -1517,13 +1517,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            114,
-            10,
+            86,
             84,
-            64,
-            25,
-            11,
-            138
+            145,
+            39,
+            123,
+            14,
+            13
           ],
           "x_position": 365,
           "y_position": 395,
@@ -1533,13 +1533,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            39,
+            99,
+            138,
+            120,
             129,
-            19,
-            70,
-            145,
-            5,
-            120
+            11,
+            108,
+            145
           ],
           "x_position": 655,
           "y_position": 395,
@@ -1549,13 +1549,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            21,
+            41,
+            74,
+            87,
+            60,
             26,
-            67,
-            7,
-            9,
-            83,
-            62
+            27,
+            135
           ],
           "x_position": 945,
           "y_position": 395,
@@ -1565,13 +1565,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            110,
-            62,
-            100,
-            121,
-            11,
-            105,
-            22
+            93,
+            51,
+            126,
+            74,
+            54,
+            41,
+            31
           ],
           "x_position": 75,
           "y_position": 470,
@@ -1581,13 +1581,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            19,
-            145,
-            26,
-            36,
-            123,
-            48,
-            39
+            114,
+            97,
+            10,
+            91,
+            25,
+            84,
+            64
           ],
           "x_position": 365,
           "y_position": 470,
@@ -1597,13 +1597,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            21,
-            35,
-            123,
-            99,
-            120,
-            1,
-            98
+            39,
+            129,
+            145,
+            69,
+            70,
+            14,
+            5
           ],
           "x_position": 655,
           "y_position": 470,
@@ -1613,13 +1613,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            128,
-            74,
-            2,
-            8,
-            36,
-            71,
-            93
+            21,
+            26,
+            62,
+            83,
+            67,
+            7,
+            104
           ],
           "x_position": 945,
           "y_position": 470,
@@ -1634,13 +1634,13 @@
           "width": 65,
           "height": 525,
           "hero_ids": [
-            86,
             14,
-            22,
             71,
-            26,
+            22,
+            123,
             128,
-            105
+            105,
+            62
           ],
           "x_position": 0,
           "y_position": 0,
@@ -1650,13 +1650,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            60,
-            12,
-            135,
-            8,
+            90,
+            128,
             74,
-            104,
-            41
+            112,
+            60,
+            86,
+            36
           ],
           "x_position": 75,
           "y_position": 20,
@@ -1667,12 +1667,12 @@
           "height": 55,
           "hero_ids": [
             99,
-            145,
-            138,
+            120,
             98,
-            129,
-            64,
-            39
+            36,
+            145,
+            123,
+            114
           ],
           "x_position": 365,
           "y_position": 20,
@@ -1682,13 +1682,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            19,
-            145,
+            44,
+            129,
+            98,
             39,
-            120,
-            138,
-            26,
-            114
+            22,
+            5,
+            101
           ],
           "x_position": 655,
           "y_position": 20,
@@ -1698,13 +1698,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
+            128,
             62,
+            51,
             60,
-            6,
-            2,
-            74,
-            59,
-            93
+            85,
+            135,
+            74
           ],
           "x_position": 945,
           "y_position": 20,
@@ -1714,13 +1714,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            128,
             74,
-            105,
             60,
-            36,
-            86,
-            112
+            87,
+            135,
+            11,
+            106,
+            12
           ],
           "x_position": 75,
           "y_position": 95,
@@ -1730,13 +1730,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
+            19,
             99,
-            120,
-            36,
-            123,
+            63,
             39,
-            114,
-            145
+            73,
+            10,
+            38
           ],
           "x_position": 365,
           "y_position": 95,
@@ -1746,13 +1746,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            129,
-            44,
+            145,
+            8,
             39,
-            98,
-            101,
-            22,
-            5
+            69,
+            17,
+            126,
+            54
           ],
           "x_position": 655,
           "y_position": 95,
@@ -1762,13 +1762,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            128,
-            51,
-            60,
-            85,
-            74,
-            93,
-            135
+            62,
+            56,
+            50,
+            36,
+            90,
+            6,
+            105
           ],
           "x_position": 945,
           "y_position": 95,
@@ -1795,12 +1795,12 @@
           "height": 55,
           "hero_ids": [
             101,
-            99,
             73,
+            99,
             64,
             98,
-            16,
-            114
+            114,
+            16
           ],
           "x_position": 365,
           "y_position": 170,
@@ -1810,13 +1810,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            129,
             145,
-            19,
-            35,
-            93,
+            129,
             29,
-            48
+            48,
+            93,
+            39,
+            26
           ],
           "x_position": 655,
           "y_position": 170,
@@ -1829,10 +1829,10 @@
             62,
             90,
             3,
+            42,
+            112,
             60,
-            41,
-            56,
-            21
+            41
           ],
           "x_position": 945,
           "y_position": 170,
@@ -1842,128 +1842,64 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            74,
             60,
-            106,
-            6,
-            87,
-            25,
-            128
-          ],
-          "x_position": 75,
-          "y_position": 245,
-          "category_name": "Best with"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            73,
-            16,
-            19,
-            99,
-            63,
-            39,
-            10
-          ],
-          "x_position": 365,
-          "y_position": 245,
-          "category_name": "Worst with"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            145,
-            8,
-            39,
-            17,
-            126,
-            48,
-            11
-          ],
-          "x_position": 655,
-          "y_position": 245,
-          "category_name": "Best against"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            74,
-            62,
-            50,
-            56,
-            90,
-            36,
-            105
-          ],
-          "x_position": 945,
-          "y_position": 245,
-          "category_name": "Worst against"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            83,
-            74,
-            135,
-            8,
-            36,
-            76,
-            121
-          ],
-          "x_position": 75,
-          "y_position": 320,
-          "category_name": "Best with"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            138,
-            19,
-            108,
-            25,
-            145,
-            5,
-            39
-          ],
-          "x_position": 365,
-          "y_position": 320,
-          "category_name": "Worst with"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            39,
-            145,
-            64,
-            40,
-            97,
-            99,
-            22
-          ],
-          "x_position": 655,
-          "y_position": 320,
-          "category_name": "Best against"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
             128,
-            74,
-            6,
-            60,
-            86,
+            12,
+            67,
+            41,
             2,
-            135
+            54
+          ],
+          "x_position": 75,
+          "y_position": 245,
+          "category_name": "Best with"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            96,
+            98,
+            39,
+            19,
+            99,
+            129,
+            145
+          ],
+          "x_position": 365,
+          "y_position": 245,
+          "category_name": "Worst with"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            120,
+            98,
+            39,
+            114,
+            22,
+            108,
+            19
+          ],
+          "x_position": 655,
+          "y_position": 245,
+          "category_name": "Best against"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            2,
+            12,
+            14,
+            60,
+            74,
+            87,
+            6
           ],
           "x_position": 945,
-          "y_position": 320,
+          "y_position": 245,
           "category_name": "Worst against"
         },
         {
@@ -1974,12 +1910,12 @@
             41,
             31,
             60,
-            26,
-            135,
+            59,
+            67,
             106
           ],
           "x_position": 75,
-          "y_position": 395,
+          "y_position": 320,
           "category_name": "Best with"
         },
         {
@@ -1988,14 +1924,14 @@
           "hero_ids": [
             99,
             145,
-            84,
+            120,
             98,
-            131,
             114,
-            120
+            138,
+            5
           ],
           "x_position": 365,
-          "y_position": 395,
+          "y_position": 320,
           "category_name": "Worst with"
         },
         {
@@ -2004,14 +1940,14 @@
           "hero_ids": [
             29,
             138,
-            120,
             98,
+            120,
             145,
             19,
-            109
+            114
           ],
           "x_position": 655,
-          "y_position": 395,
+          "y_position": 320,
           "category_name": "Best against"
         },
         {
@@ -2019,15 +1955,15 @@
           "height": 55,
           "hero_ids": [
             41,
-            11,
             60,
-            74,
-            104,
+            11,
             25,
-            135
+            74,
+            110,
+            104
           ],
           "x_position": 945,
-          "y_position": 395,
+          "y_position": 320,
           "category_name": "Worst against"
         },
         {
@@ -2036,14 +1972,14 @@
           "hero_ids": [
             60,
             75,
-            74,
-            41,
             14,
+            41,
+            74,
             93,
-            69
+            12
           ],
           "x_position": 75,
-          "y_position": 470,
+          "y_position": 395,
           "category_name": "Best with"
         },
         {
@@ -2052,14 +1988,14 @@
           "hero_ids": [
             98,
             38,
+            108,
             64,
-            145,
             37,
-            110,
-            108
+            114,
+            40
           ],
           "x_position": 365,
-          "y_position": 470,
+          "y_position": 395,
           "category_name": "Worst with"
         },
         {
@@ -2067,15 +2003,15 @@
           "height": 55,
           "hero_ids": [
             145,
-            70,
             93,
             75,
-            39,
             101,
+            129,
+            39,
             17
           ],
           "x_position": 655,
-          "y_position": 470,
+          "y_position": 395,
           "category_name": "Best against"
         },
         {
@@ -2087,8 +2023,72 @@
             34,
             51,
             41,
-            2,
-            54
+            54,
+            112
+          ],
+          "x_position": 945,
+          "y_position": 395,
+          "category_name": "Worst against"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            104,
+            128,
+            31,
+            54,
+            135,
+            11,
+            27
+          ],
+          "x_position": 75,
+          "y_position": 470,
+          "category_name": "Best with"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            93,
+            114,
+            100,
+            129,
+            126,
+            15,
+            39
+          ],
+          "x_position": 365,
+          "y_position": 470,
+          "category_name": "Worst with"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            14,
+            39,
+            36,
+            129,
+            22,
+            145,
+            28
+          ],
+          "x_position": 655,
+          "y_position": 470,
+          "category_name": "Best against"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            136,
+            84,
+            92,
+            111,
+            73,
+            87,
+            97
           ],
           "x_position": 945,
           "y_position": 470,
@@ -2105,11 +2105,11 @@
           "hero_ids": [
             14,
             87,
-            75,
             86,
+            75,
             5,
             51,
-            128
+            22
           ],
           "x_position": 0,
           "y_position": 0,
@@ -2119,13 +2119,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            6,
             56,
+            6,
             74,
             35,
-            21,
-            86,
-            2
+            13,
+            88,
+            86
           ],
           "x_position": 75,
           "y_position": 20,
@@ -2136,11 +2136,11 @@
           "height": 55,
           "hero_ids": [
             99,
-            39,
             19,
             1,
+            39,
             145,
-            126,
+            97,
             120
           ],
           "x_position": 365,
@@ -2155,8 +2155,8 @@
             5,
             35,
             145,
-            138,
             98,
+            138,
             120
           ],
           "x_position": 655,
@@ -2169,11 +2169,11 @@
           "hero_ids": [
             135,
             74,
-            12,
             128,
-            30,
-            29,
-            97
+            12,
+            105,
+            97,
+            2
           ],
           "x_position": 945,
           "y_position": 20,
@@ -2188,8 +2188,8 @@
             109,
             74,
             71,
-            128,
-            2
+            60,
+            128
           ],
           "x_position": 75,
           "y_position": 95,
@@ -2200,12 +2200,12 @@
           "height": 55,
           "hero_ids": [
             73,
-            99,
             129,
-            137,
-            138,
+            99,
             98,
-            96
+            96,
+            126,
+            145
           ],
           "x_position": 365,
           "y_position": 95,
@@ -2218,10 +2218,10 @@
             97,
             114,
             19,
-            70,
-            39,
             17,
-            36
+            39,
+            28,
+            123
           ],
           "x_position": 655,
           "y_position": 95,
@@ -2237,7 +2237,7 @@
             36,
             2,
             22,
-            106
+            85
           ],
           "x_position": 945,
           "y_position": 95,
@@ -2247,80 +2247,16 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            12,
-            105,
-            93,
-            74,
-            128,
-            71,
-            123
-          ],
-          "x_position": 75,
-          "y_position": 170,
-          "category_name": "Best with"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            47,
-            145,
-            101,
-            19,
-            73,
-            99,
-            96
-          ],
-          "x_position": 365,
-          "y_position": 170,
-          "category_name": "Worst with"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            19,
-            114,
-            5,
-            120,
-            1,
-            39,
-            36
-          ],
-          "x_position": 655,
-          "y_position": 170,
-          "category_name": "Best against"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            71,
-            59,
-            74,
-            105,
-            104,
-            60,
-            12
-          ],
-          "x_position": 945,
-          "y_position": 170,
-          "category_name": "Worst against"
-        },
-        {
-          "width": 280,
-          "height": 55,
-          "hero_ids": [
-            74,
             54,
+            74,
             60,
-            106,
             12,
-            41,
-            71
+            106,
+            71,
+            41
           ],
           "x_position": 75,
-          "y_position": 245,
+          "y_position": 170,
           "category_name": "Best with"
         },
         {
@@ -2330,13 +2266,13 @@
             98,
             19,
             99,
-            53,
             145,
+            53,
             138,
-            43
+            94
           ],
           "x_position": 365,
-          "y_position": 245,
+          "y_position": 170,
           "category_name": "Worst with"
         },
         {
@@ -2352,7 +2288,7 @@
             44
           ],
           "x_position": 655,
-          "y_position": 245,
+          "y_position": 170,
           "category_name": "Best against"
         },
         {
@@ -2363,9 +2299,73 @@
             62,
             104,
             88,
-            51,
             6,
-            93
+            67,
+            34
+          ],
+          "x_position": 945,
+          "y_position": 170,
+          "category_name": "Worst against"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            12,
+            105,
+            93,
+            74,
+            128,
+            135,
+            71
+          ],
+          "x_position": 75,
+          "y_position": 245,
+          "category_name": "Best with"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            47,
+            101,
+            76,
+            73,
+            19,
+            120,
+            145
+          ],
+          "x_position": 365,
+          "y_position": 245,
+          "category_name": "Worst with"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            114,
+            19,
+            5,
+            36,
+            22,
+            129,
+            1
+          ],
+          "x_position": 655,
+          "y_position": 245,
+          "category_name": "Best against"
+        },
+        {
+          "width": 280,
+          "height": 55,
+          "hero_ids": [
+            71,
+            74,
+            59,
+            105,
+            104,
+            12,
+            51
           ],
           "x_position": 945,
           "y_position": 245,
@@ -2376,12 +2376,12 @@
           "height": 55,
           "hero_ids": [
             90,
-            88,
             74,
+            88,
             14,
+            107,
             135,
-            93,
-            67
+            93
           ],
           "x_position": 75,
           "y_position": 320,
@@ -2392,12 +2392,12 @@
           "height": 55,
           "hero_ids": [
             36,
-            126,
             26,
-            123,
             145,
-            39,
-            48
+            128,
+            123,
+            126,
+            39
           ],
           "x_position": 365,
           "y_position": 320,
@@ -2407,13 +2407,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
+            99,
             1,
-            114,
-            10,
             105,
+            10,
             64,
             39,
-            120
+            40
           ],
           "x_position": 655,
           "y_position": 320,
@@ -2423,13 +2423,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            74,
-            2,
-            135,
-            14,
             8,
             75,
-            60
+            135,
+            74,
+            2,
+            60,
+            14
           ],
           "x_position": 945,
           "y_position": 320,
@@ -2443,9 +2443,9 @@
             60,
             22,
             128,
-            41,
             13,
-            12
+            12,
+            41
           ],
           "x_position": 75,
           "y_position": 395,
@@ -2456,12 +2456,12 @@
           "height": 55,
           "hero_ids": [
             63,
-            53,
+            72,
             99,
-            52,
             43,
+            53,
             114,
-            23
+            52
           ],
           "x_position": 365,
           "y_position": 395,
@@ -2472,11 +2472,11 @@
           "height": 55,
           "hero_ids": [
             126,
-            129,
             145,
-            108,
+            129,
             14,
             29,
+            108,
             36
           ],
           "x_position": 655,
@@ -2487,13 +2487,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            50,
             77,
-            52,
+            50,
             78,
-            119,
-            59,
-            62
+            88,
+            90,
+            62,
+            59
           ],
           "x_position": 945,
           "y_position": 395,
@@ -2503,13 +2503,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            62,
-            67,
-            14,
-            41,
-            105,
-            29,
-            2
+            74,
+            12,
+            104,
+            135,
+            88,
+            8,
+            13
           ],
           "x_position": 75,
           "y_position": 470,
@@ -2519,13 +2519,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            114,
-            19,
-            145,
+            40,
+            99,
+            47,
             138,
-            98,
-            1,
-            36
+            63,
+            53,
+            42
           ],
           "x_position": 365,
           "y_position": 470,
@@ -2535,13 +2535,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            138,
-            11,
-            19,
+            39,
+            48,
             36,
-            126,
+            29,
+            28,
             145,
-            120
+            87
           ],
           "x_position": 655,
           "y_position": 470,
@@ -2551,13 +2551,13 @@
           "width": 280,
           "height": 55,
           "hero_ids": [
-            60,
-            74,
-            6,
-            51,
-            31,
-            8,
-            54
+            62,
+            76,
+            26,
+            105,
+            36,
+            88,
+            51
           ],
           "x_position": 945,
           "y_position": 470,
